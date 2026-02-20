@@ -1,0 +1,2371 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# ===================================> MONTH 1: PYTHON BASICS AND DATA MANIPULATION
+
+# ===================================> WEEK 1: INTRODUCTION TO PYTHON PROGRAMMING
+
+"""
+=================================================
+THEORY: Python Fundamentals Explained
+=================================================
+
+WHAT IS PYTHON?
+----------------
+Python is a high-level, interpreted programming language created by Guido van Rossum in 1991 at CWI in the Netherlands. 
+It is designed to be simple and readable, making it perfect for beginners while powerful enough for experts. 
+Python is called a "dynamically typed" language, meaning you do not need to declare variable types explicitly. 
+Python figures them out automatically as you assign values.
+
+Why Python is Popular:
+1. Simple Syntax: Reads like English, making it easy to learn
+2. Versatile: Can build websites, analyze data, create games, automate tasks
+3. Large Community: Millions of developers worldwide share code and help each other
+4. Rich Libraries: Thousands of pre-built tools for any task imaginable
+
+PYTHON VARIABLES:
+-----------------
+Variables are like labeled containers that store data in computer memory. Think of them as post-it notes stuck on 
+boxes. The note has a name (variable name) and the box contains a value. You can create a variable simply by assigning 
+a value using the equals sign (=). Variables can be reused, updated, and manipulated throughout your program.
+
+DATA TYPES IN PYTHON:
+--------------------
+Data types classify what kind of value a variable holds. Python has several built-in data types:
+
+1. Numeric Types:
+   - int: Whole numbers (e.g., 10, -5, 1000)
+   - float: Decimal numbers (e.g., 3.14, -0.001, 2.0)
+   - complex: Numbers with imaginary part (e.g., 2+3j)
+
+2. Text Type:
+   - str: Sequence of characters enclosed in quotes (e.g., "Hello", 'Python')
+
+3. Boolean Type:
+   - bool: Represents True or False values
+
+4. Sequence Types:
+   - list: Ordered, changeable collection with duplicates
+   - tuple: Ordered, unchangeable collection with duplicates
+   - range: Sequence of numbers
+
+5. Set Type:
+   - set: Unordered collection of unique items
+
+6. Mapping Type:
+   - dict: Key-value pairs for efficient data lookup
+
+PYTHON OPERATORS:
+----------------
+Operators are special symbols that perform operations on variables and values.
+
+1. Arithmetic Operators: +, -, *, /, // (floor division), % (modulus), ** (exponent)
+2. Comparison Operators: ==, !=, >, <, >=, <=
+3. Logical Operators: and, or, not
+4. Assignment Operators: =, +=, -=, *=, /=
+5. Identity Operators: is, is not
+6. Membership Operators: in, not in
+
+CONDITIONAL STATEMENTS:
+----------------------
+Conditional statements allow programs to make decisions and execute different code based on conditions.
+
+1. if statement: Executes code block only if condition is True
+2. if-else: Executes one block if True, another if False
+3. if-elif-else: Checks multiple conditions in sequence
+4. Nested if: if statements inside other if statements
+
+LOOPS IN PYTHON:
+---------------
+Loops allow code execution to repeat multiple times.
+
+1. for loop: Iterates over a sequence (list, tuple, string, range)
+2. while loop: Repeats as long as condition remains True
+3. Loop Control:
+   - break: Exits the loop completely
+   - continue: Skips current iteration and moves to next
+   - pass: Does nothing (placeholder)
+
+INPUT/OUTPUT OPERATIONS:
+-----------------------
+Input and output allow programs to interact with users.
+
+1. input(): Takes user input (always returns as string)
+2. print(): Displays output to console
+3. Formatted output using f-strings: f"Hello {name}"
+"""
+
+# ============================================= HANDS-ON EXAMPLES =============================================
+
+print("\n" + "="*50)
+print("WEEK 1: PYTHON BASICS - HANDS-ON EXAMPLES")
+print("="*50)
+
+# -------------------- VARIABLES AND DATA TYPES --------------------
+print("\n--- Variables and Data Types ---")
+
+# Numeric types
+age = 25                      # int
+price = 99.99                 # float
+complex_num = 3 + 4j          # complex
+
+# Text type
+name = "Python Learner"       # str
+
+# Boolean
+is_learning = True            # bool
+
+# Display variable types
+print(f"age: {age} - Type: {type(age)}")
+print(f"price: {price} - Type: {type(price)}")
+print(f"name: {name} - Type: {type(name)}")
+print(f"is_learning: {is_learning} - Type: {type(is_learning)}")
+
+# Multiple assignment
+x, y, z = 10, 20, 30
+print(f"\nMultiple assignment: x={x}, y={y}, z={z}")
+
+# -------------------- OPERATORS DEMONSTRATION --------------------
+print("\n--- Operators Demonstration ---")
+
+a, b = 15, 4
+
+print(f"a = {a}, b = {b}")
+print(f"Addition (a + b): {a + b}")
+print(f"Subtraction (a - b): {a - b}")
+print(f"Multiplication (a * b): {a * b}")
+print(f"Division (a / b): {a / b}")
+print(f"Floor Division (a // b): {a // b}")  # Rounds down to nearest integer
+print(f"Modulus (a % b): {a % b}")            # Remainder
+print(f"Exponent (a ** b): {a ** b}")         # a raised to power b
+
+# Comparison operators
+print(f"\nIs a > b? {a > b}")
+print(f"Is a == b? {a == b}")
+print(f"Is a != b? {a != b}")
+
+# Logical operators
+print(f"\n(a > 10 and b < 5): {a > 10 and b < 5}")
+print(f"(a > 10 or b < 5): {a > 10 or b < 5}")
+print(f"not (a > 10): {not (a > 10)}")
+
+# -------------------- CONDITIONAL STATEMENTS --------------------
+print("\n--- Conditional Statements ---")
+
+# if-elif-else example: Grade Calculator
+marks = 85
+print(f"Student Marks: {marks}")
+
+if marks >= 90:
+    grade = "A+ (Excellent)"
+elif marks >= 80:
+    grade = "A (Very Good)"
+elif marks >= 70:
+    grade = "B (Good)"
+elif marks >= 60:
+    grade = "C (Average)"
+elif marks >= 50:
+    grade = "D (Pass)"
+else:
+    grade = "F (Fail)"
+
+print(f"Grade: {grade}")
+
+# Nested if example: Validate and categorize age
+age = 25
+if age > 0:
+    if age >= 18:
+        if age >= 60:
+            print("Senior Citizen")
+        else:
+            print("Adult")
+    else:
+        print("Minor")
+else:
+    print("Invalid age")
+
+# -------------------- LOOPS --------------------
+print("\n--- Loops Demonstration ---")
+
+# for loop with range
+print("For loop - Counting from 1 to 5:")
+for i in range(1, 6):
+    print(f"Count: {i}")
+
+# for loop with list
+fruits = ["apple", "banana", "cherry", "date"]
+print("\nIterating through fruits list:")
+for fruit in fruits:
+    print(f"I like {fruit}")
+
+# while loop
+print("\nWhile loop - Countdown:")
+countdown = 5
+while countdown > 0:
+    print(f"Countdown: {countdown}")
+    countdown -= 1
+print("Blast off!")
+
+# break and continue examples
+print("\nBreak and Continue Demonstration:")
+for i in range(1, 11):
+    if i == 5:
+        print("Breaking at 5!")
+        break
+    print(f"Number: {i}")
+
+print("\nContinue demonstration (skip even numbers):")
+for i in range(1, 11):
+    if i % 2 == 0:
+        continue  # Skip even numbers
+    print(f"Odd number: {i}")
+
+# Nested loops - Multiplication table
+print("\nMultiplication Table (1-5):")
+for i in range(1, 6):
+    for j in range(1, 6):
+        print(f"{i}×{j}={i*j:2d}", end="  ")
+    print()  # New line after each row
+
+# -------------------- INPUT/OUTPUT --------------------
+print("\n--- Input/Output Operations ---")
+
+# Basic input-output
+# Uncomment to run interactively:
+# user_name = input("Enter your name: ")
+# print(f"Hello, {user_name}! Welcome to Python learning.")
+
+# Type conversion with input
+# age = int(input("Enter your age: "))
+# print(f"Next year you will be {age + 1} years old.")
+
+# -------------------- CLIENT PROJECT 1: TEMPERATURE CONVERTER --------------------
+print("\n" + "="*50)
+print("CLIENT PROJECT 1: Temperature Converter System")
+print("="*50)
+
+def temperature_converter():
+    """
+    A comprehensive temperature converter that converts between Celsius, Fahrenheit, and Kelvin.
+    This script demonstrates input validation, multiple conditions, and formatted output.
+    """
+    print("\nTEMPERATURE CONVERTER")
+    print("="*30)
+    print("1. Celsius to Fahrenheit")
+    print("2. Fahrenheit to Celsius")
+    print("3. Celsius to Kelvin")
+    print("4. Kelvin to Celsius")
+    print("5. Fahrenheit to Kelvin")
+    print("6. Kelvin to Fahrenheit")
+    
+    try:
+        choice = int(input("\nEnter your choice (1-6): "))
+        
+        if choice == 1:  # Celsius to Fahrenheit
+            celsius = float(input("Enter temperature in Celsius: "))
+            fahrenheit = (celsius * 9/5) + 32
+            print(f"\n{celsius}°C = {fahrenheit:.2f}°F")
+            
+        elif choice == 2:  # Fahrenheit to Celsius
+            fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+            celsius = (fahrenheit - 32) * 5/9
+            print(f"\n{fahrenheit}°F = {celsius:.2f}°C")
+            
+        elif choice == 3:  # Celsius to Kelvin
+            celsius = float(input("Enter temperature in Celsius: "))
+            kelvin = celsius + 273.15
+            print(f"\n{celsius}°C = {kelvin:.2f}K")
+            
+        elif choice == 4:  # Kelvin to Celsius
+            kelvin = float(input("Enter temperature in Kelvin: "))
+            if kelvin < 0:
+                print("Error: Kelvin cannot be negative!")
+            else:
+                celsius = kelvin - 273.15
+                print(f"\n{kelvin}K = {celsius:.2f}°C")
+                
+        elif choice == 5:  # Fahrenheit to Kelvin
+            fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+            celsius = (fahrenheit - 32) * 5/9
+            kelvin = celsius + 273.15
+            print(f"\n{fahrenheit}°F = {kelvin:.2f}K")
+            
+        elif choice == 6:  # Kelvin to Fahrenheit
+            kelvin = float(input("Enter temperature in Kelvin: "))
+            if kelvin < 0:
+                print("Error: Kelvin cannot be negative!")
+            else:
+                celsius = kelvin - 273.15
+                fahrenheit = (celsius * 9/5) + 32
+                print(f"\n{kelvin}K = {fahrenheit:.2f}°F")
+                
+        else:
+            print("Invalid choice! Please select 1-6.")
+            
+    except ValueError:
+        print("Error: Please enter valid numeric values!")
+
+# Run the temperature converter
+temperature_converter()
+
+# -------------------- CLIENT PROJECT 2: ADVANCED CALCULATOR --------------------
+print("\n" + "="*50)
+print("CLIENT PROJECT 2: Advanced Calculator with History")
+print("="*50)
+
+def advanced_calculator():
+    """
+    An advanced calculator that performs multiple operations and keeps history.
+    Demonstrates functions, loops, and data structures.
+    """
+    history = []  # List to store calculation history
+    
+    while True:
+        print("\nADVANCED CALCULATOR")
+        print("="*30)
+        print("1. Addition (+)")
+        print("2. Subtraction (-)")
+        print("3. Multiplication (×)")
+        print("4. Division (÷)")
+        print("5. Floor Division (//)")
+        print("6. Modulus (%)")
+        print("7. Power (^)")
+        print("8. Square Root (√)")
+        print("9. View History")
+        print("10. Clear History")
+        print("11. Exit")
+        
+        try:
+            choice = input("\nEnter your choice (1-11): ")
+            
+            if choice == '11':
+                print("\nThank you for using the calculator. Goodbye!")
+                break
+                
+            elif choice == '9':
+                print("\nCalculation History:")
+                if not history:
+                    print("No calculations yet.")
+                else:
+                    for i, calc in enumerate(history, 1):
+                        print(f"{i}. {calc}")
+                continue
+                
+            elif choice == '10':
+                history.clear()
+                print("History cleared!")
+                continue
+                
+            elif choice == '8':  # Square root
+                num = float(input("Enter number: "))
+                if num < 0:
+                    print("Error: Cannot calculate square root of negative number!")
+                else:
+                    result = num ** 0.5
+                    calc_str = f"√{num} = {result:.4f}"
+                    print(f"Result: {calc_str}")
+                    history.append(calc_str)
+                    
+            elif choice in ['1', '2', '3', '4', '5', '6', '7']:
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+                
+                operations = {
+                    '1': ('+', lambda x, y: x + y),
+                    '2': ('-', lambda x, y: x - y),
+                    '3': ('×', lambda x, y: x * y),
+                    '4': ('÷', lambda x, y: x / y if y != 0 else "Error: Division by zero!"),
+                    '5': ('//', lambda x, y: x // y if y != 0 else "Error: Division by zero!"),
+                    '6': ('%', lambda x, y: x % y if y != 0 else "Error: Modulus by zero!"),
+                    '7': ('^', lambda x, y: x ** y)
+                }
+                
+                symbol, operation = operations[choice]
+                result = operation(num1, num2)
+                
+                if isinstance(result, str):  # Error message
+                    print(f"{result}")
+                else:
+                    calc_str = f"{num1} {symbol} {num2} = {result}"
+                    print(f"Result: {calc_str}")
+                    history.append(calc_str)
+                    
+            else:
+                print("Invalid choice!")
+                
+        except ValueError:
+            print("Error: Please enter valid numbers!")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+# Uncomment to run the calculator:
+# advanced_calculator()
+
+# -------------------- CLIENT PROJECT 3: WEATHER DATA PROCESSING --------------------
+print("\n" + "="*50)
+print("CLIENT PROJECT 3: Weather Data Processing System")
+print("="*50)
+
+def weather_data_processor():
+    """
+    Process temperature data for multiple days with statistical analysis.
+    Demonstrates lists, loops, and data processing concepts.
+    """
+    print("\nWEATHER DATA PROCESSOR")
+    print("="*35)
+    
+    try:
+        # Get number of days
+        num_days = int(input("Enter number of days to record: "))
+        
+        if num_days <= 0:
+            print("Please enter a positive number of days.")
+            return
+        
+        temperatures = []  # List to store temperatures
+        days = []  # List to store day names/labels
+        
+        print(f"\nEnter temperatures for {num_days} days:")
+        
+        for i in range(num_days):
+            day_label = input(f"Enter label for Day {i+1} (e.g., Monday, Jan 1): ")
+            temp = float(input(f"Enter temperature for {day_label}: "))
+            
+            days.append(day_label)
+            temperatures.append(temp)
+        
+        # Calculate statistics
+        total = sum(temperatures)
+        average = total / num_days
+        max_temp = max(temperatures)
+        min_temp = min(temperatures)
+        max_day = days[temperatures.index(max_temp)]
+        min_day = days[temperatures.index(min_temp)]
+        
+        # Sort data for analysis
+        sorted_data = sorted(zip(days, temperatures), key=lambda x: x[1])
+        
+        # Display results
+        print("\n" + "="*40)
+        print("WEATHER ANALYSIS RESULTS")
+        print("="*40)
+        
+        print("\nDaily Temperatures:")
+        for day, temp in zip(days, temperatures):
+            bar = "█" * int(temp // 2)  # Simple visualization
+            print(f"{day:10}: {temp:6.2f}°C |{bar}")
+        
+        print(f"\nStatistics:")
+        print(f"   Total Days        : {num_days}")
+        print(f"   Total Temperature : {total:.2f}°C")
+        print(f"   Average Temperature: {average:.2f}°C")
+        print(f"   Maximum Temperature: {max_temp:.2f}°C (on {max_day})")
+        print(f"   Minimum Temperature: {min_temp:.2f}°C (on {min_day})")
+        print(f"   Temperature Range  : {max_temp - min_temp:.2f}°C")
+        
+        # Temperature classification
+        print(f"\nTemperature Classification:")
+        hot_days = 0
+        cold_days = 0
+        mild_days = 0
+        
+        for day, temp in zip(days, temperatures):
+            if temp >= 30:
+                classification = "Hot"
+                hot_days += 1
+            elif temp <= 10:
+                classification = "Cold"
+                cold_days += 1
+            else:
+                classification = "Mild"
+                mild_days += 1
+            print(f"   {day}: {temp:.1f}°C - {classification}")
+        
+        print(f"\nSummary: Hot: {hot_days}, Mild: {mild_days}, Cold: {cold_days}")
+        
+    except ValueError:
+        print("Error: Please enter valid numeric temperatures!")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+# Run weather data processor
+weather_data_processor()
+
+print("\n" + "="*50)
+print("WEEK 1 COMPLETED: Python Basics Mastered!")
+print("="*50)
+
+
+# ===================================> WEEK 2: DATA STRUCTURES AND FUNCTIONS
+
+"""
+=================================================
+THEORY: Data Structures and Functions Explained
+=================================================
+
+PYTHON DATA STRUCTURES:
+-----------------------
+
+1. LISTS (Mutable, Ordered):
+   Lists are versatile, ordered collections that can hold items of different types. They are mutable, meaning you 
+   can change, add, or remove items after creation. Lists use square brackets [] and are perfect for sequences 
+   that need frequent modifications.
+
+   Key Features:
+   - Ordered: Items maintain their position
+   - Mutable: Can be changed after creation
+   - Allow duplicates: Same value can appear multiple times
+   - Indexed: Access items by position (starting at 0)
+   - Dynamic: Can grow or shrink as needed
+
+2. TUPLES (Immutable, Ordered):
+   Tuples are like lists but immutable. Once created, they cannot be changed. They use parentheses () and are 
+   ideal for fixed collections of related values (like coordinates or database records).
+
+   Key Features:
+   - Immutable: Cannot be modified after creation
+   - Faster than lists for fixed data
+   - Can be used as dictionary keys (lists cannot)
+   - Memory efficient
+
+3. SETS (Mutable, Unordered, Unique):
+   Sets store unique elements with no duplicates and no particular order. They use curly braces {} and excel at 
+   mathematical operations like union, intersection, and difference.
+
+   Key Features:
+   - No duplicates automatically removed
+   - Unordered (cannot access by index)
+   - Fast membership testing
+   - Support mathematical set operations
+
+4. DICTIONARIES (Mutable, Key-Value Pairs):
+   Dictionaries store data as key-value pairs, providing fast lookups by key. They use curly braces {} with 
+   colons separating keys and values. Perfect for structured data like student records or configuration settings.
+
+   Key Features:
+   - Fast key-based lookup
+   - Keys must be immutable (strings, numbers, tuples)
+   - Values can be any type
+   - Dynamic size
+
+FUNCTIONS IN PYTHON:
+-------------------
+Functions are reusable blocks of code that perform specific tasks. They help organize code, avoid repetition, 
+and make programs more modular and maintainable.
+
+1. Function Definition:
+   - Use 'def' keyword followed by function name and parameters
+   - Function body must be indented
+   - Can return values using 'return' statement
+
+2. Types of Arguments:
+   a) Positional Arguments: Matched by position
+   b) Keyword Arguments: Matched by parameter name
+   c) Default Arguments: Have default values if not provided
+   d) Variable-length Arguments: *args (tuple) and **kwargs (dictionary)
+
+3. Lambda Functions:
+   Anonymous, one-line functions defined with 'lambda' keyword. Useful for simple operations and functional 
+   programming patterns like map(), filter(), and sort().
+
+4. Recursion:
+   When a function calls itself to solve smaller instances of the same problem. Essential for problems like 
+   tree traversal, factorial calculation, and divide-and-conquer algorithms.
+
+LIST COMPREHENSION:
+------------------
+A concise way to create lists by applying an expression to each item in an iterable, optionally with a condition.
+Syntax: [expression for item in iterable if condition]
+"""
+
+print("\n" + "="*50)
+print("WEEK 2: DATA STRUCTURES AND FUNCTIONS")
+print("="*50)
+
+# -------------------- DATA STRUCTURES DEMONSTRATION --------------------
+print("\n--- Python Data Structures Deep Dive ---")
+
+# 1. LISTS - Mutable, Ordered
+print("\nLISTS (Mutable, Ordered):")
+fruits = ["apple", "banana", "cherry", "date", "banana"]  # Duplicates allowed
+print(f"Original list: {fruits}")
+
+# List operations
+fruits.append("elderberry")  # Add to end
+print(f"After append: {fruits}")
+
+fruits.insert(1, "blueberry")  # Insert at position
+print(f"After insert: {fruits}")
+
+fruits.remove("banana")  # Remove first occurrence
+print(f"After remove: {fruits}")
+
+popped = fruits.pop()  # Remove and return last item
+print(f"Popped item: {popped}")
+print(f"After pop: {fruits}")
+
+# List indexing and slicing
+print(f"\nFirst fruit: {fruits[0]}")
+print(f"Last fruit: {fruits[-1]}")
+print(f"First 3 fruits: {fruits[:3]}")
+print(f"Fruits from index 2: {fruits[2:]}")
+
+# 2. TUPLES - Immutable, Ordered
+print("\nTUPLES (Immutable, Ordered):")
+coordinates = (10, 20, 30)  # Cannot be changed
+point_2d = (15, 25)
+
+print(f"3D Coordinates: {coordinates}")
+print(f"X coordinate: {coordinates[0]}")
+print(f"Y coordinate: {coordinates[1]}")
+
+# Trying to modify tuple (will cause error if uncommented)
+# coordinates[0] = 100  # TypeError!
+
+# Tuple unpacking
+x, y, z = coordinates
+print(f"Unpacked: x={x}, y={y}, z={z}")
+
+# 3. SETS - Unordered, Unique
+print("\nSETS (Unordered, Unique):")
+numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+unique_numbers = set(numbers)
+print(f"Original list with duplicates: {numbers}")
+print(f"Set (duplicates removed): {unique_numbers}")
+
+# Set operations
+set_a = {1, 2, 3, 4, 5}
+set_b = {4, 5, 6, 7, 8}
+
+print(f"\nSet A: {set_a}")
+print(f"Set B: {set_b}")
+print(f"Union (A ∪ B): {set_a.union(set_b)}")
+print(f"Intersection (A ∩ B): {set_a.intersection(set_b)}")
+print(f"Difference (A - B): {set_a.difference(set_b)}")
+print(f"Symmetric Difference: {set_a.symmetric_difference(set_b)}")
+
+# 4. DICTIONARIES - Key-Value Pairs
+print("\nDICTIONARIES (Key-Value Pairs):")
+student = {
+    "name": "Alice Johnson",
+    "age": 20,
+    "major": "Computer Science",
+    "grades": {"math": 95, "physics": 88, "chemistry": 92},
+    "is_graduated": False
+}
+
+print(f"Student record: {student}")
+print(f"Name: {student['name']}")
+print(f"Age: {student.get('age', 'Not specified')}")
+print(f"Math grade: {student['grades']['math']}")
+
+# Dictionary operations
+student["email"] = "alice@university.edu"  # Add new key-value pair
+print(f"After adding email: {student['email']}")
+
+# Iterating through dictionary
+print("\nIterating through student record:")
+for key, value in student.items():
+    print(f"  {key}: {value}")
+
+# -------------------- FUNCTIONS DEMONSTRATION --------------------
+print("\n" + "="*40)
+print("FUNCTIONS IN PYTHON")
+print("="*40)
+
+# Basic function
+def greet(name):
+    """Simple greeting function"""
+    return f"Hello, {name}! Welcome to Python functions."
+
+print(greet("Student"))
+
+# Function with multiple parameters and default arguments
+def calculate_rectangle(length, width, unit="meters"):
+    """Calculate area and perimeter of a rectangle"""
+    area = length * width
+    perimeter = 2 * (length + width)
+    return {
+        "area": area,
+        "perimeter": perimeter,
+        "unit": unit
+    }
+
+result = calculate_rectangle(5, 3)
+print(f"\nRectangle: {result}")
+result_feet = calculate_rectangle(5, 3, "feet")
+print(f"In feet: {result_feet}")
+
+# Function with variable arguments (*args)
+def calculate_average(*numbers):
+    """Calculate average of any number of arguments"""
+    if not numbers:
+        return 0
+    total = sum(numbers)
+    count = len(numbers)
+    return total / count
+
+print(f"\nAverage of 10, 20, 30: {calculate_average(10, 20, 30)}")
+print(f"Average of 5, 15, 25, 35, 45: {calculate_average(5, 15, 25, 35, 45)}")
+
+# Function with keyword arguments (**kwargs)
+def print_student_info(**kwargs):
+    """Print student information from keyword arguments"""
+    print("\nStudent Information:")
+    for key, value in kwargs.items():
+        print(f"  {key.replace('_', ' ').title()}: {value}")
+
+print_student_info(name="Bob Smith", age=22, major="Data Science", gpa=3.8)
+
+# Nested functions and closures
+def multiplier(factor):
+    """Return a function that multiplies by the given factor"""
+    def multiply(number):
+        return number * factor
+    return multiply
+
+double = multiplier(2)
+triple = multiplier(3)
+
+print(f"\nDouble 10: {double(10)}")
+print(f"Triple 10: {triple(10)}")
+
+# -------------------- LAMBDA FUNCTIONS --------------------
+print("\n" + "="*40)
+print("LAMBDA FUNCTIONS (Anonymous Functions)")
+print("="*40)
+
+# Basic lambda
+square = lambda x: x ** 2
+print(f"Square of 5 using lambda: {square(5)}")
+
+# Lambda with multiple arguments
+add = lambda a, b: a + b
+print(f"10 + 20 using lambda: {add(10, 20)}")
+
+# Lambda with sorted()
+students = [
+    {"name": "Alice", "grade": 85},
+    {"name": "Bob", "grade": 92},
+    {"name": "Charlie", "grade": 78}
+]
+
+sorted_by_grade = sorted(students, key=lambda student: student["grade"])
+print("\nStudents sorted by grade:")
+for student in sorted_by_grade:
+    print(f"  {student['name']}: {student['grade']}")
+
+# Lambda with filter()
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(f"\nEven numbers from 1-10: {even_numbers}")
+
+# Lambda with map()
+squared_numbers = list(map(lambda x: x ** 2, numbers))
+print(f"Squared numbers 1-10: {squared_numbers}")
+
+# -------------------- RECURSION --------------------
+print("\n" + "="*40)
+print("RECURSION (Functions Calling Themselves)")
+print("="*40)
+
+# Factorial using recursion
+def factorial(n):
+    """Calculate factorial using recursion"""
+    # Base case
+    if n <= 1:
+        return 1
+    # Recursive case
+    return n * factorial(n - 1)
+
+print(f"Factorial of 5: {factorial(5)}")
+print(f"Factorial of 7: {factorial(7)}")
+
+# Fibonacci using recursion
+def fibonacci(n):
+    """Calculate nth Fibonacci number using recursion"""
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print("\nFibonacci sequence (first 10 numbers):")
+for i in range(10):
+    print(f"  fib({i}) = {fibonacci(i)}")
+
+# Sum of digits using recursion
+def sum_of_digits(n):
+    """Calculate sum of digits using recursion"""
+    if n < 10:
+        return n
+    return n % 10 + sum_of_digits(n // 10)
+
+print(f"\nSum of digits in 12345: {sum_of_digits(12345)}")
+print(f"Sum of digits in 9876: {sum_of_digits(9876)}")
+
+# -------------------- LIST COMPREHENSION --------------------
+print("\n" + "="*40)
+print("LIST COMPREHENSION (Concise List Creation)")
+print("="*40)
+
+# Basic list comprehension
+squares = [x**2 for x in range(1, 11)]
+print(f"Squares 1-10: {squares}")
+
+# List comprehension with condition
+even_squares = [x**2 for x in range(1, 21) if x % 2 == 0]
+print(f"Even squares 1-20: {even_squares}")
+
+# Nested list comprehension
+matrix = [[i*j for j in range(1, 4)] for i in range(1, 4)]
+print(f"\n3x3 Multiplication Matrix:")
+for row in matrix:
+    print(f"  {row}")
+
+# List comprehension with string manipulation
+words = ["hello", "world", "python", "data", "science"]
+upper_words = [word.upper() for word in words if len(word) > 4]
+print(f"\nWords with length >4 (uppercase): {upper_words}")
+
+# Flatten a matrix using list comprehension
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [num for row in matrix for num in row]
+print(f"\nFlattened matrix: {flattened}")
+
+# Dictionary comprehension
+square_dict = {x: x**2 for x in range(1, 6)}
+print(f"\nNumber:Square dictionary: {square_dict}")
+
+# -------------------- CLIENT PROJECT 4: DATA CLEANING SCRIPT --------------------
+print("\n" + "="*50)
+print("CLIENT PROJECT 4: Advanced Data Cleaning and Transformation")
+print("="*50)
+
+def data_cleaning_pipeline():
+    """
+    Comprehensive data cleaning script that handles:
+    - Duplicate removal
+    - Data validation
+    - Outlier detection
+    - Data transformation
+    - Statistical analysis
+    """
+    print("\nDATA CLEANING PIPELINE")
+    print("="*35)
+    
+    # Sample raw data with various issues
+    raw_data = [
+        45, 67, 23, 45, -5, 89, 12, 67, 1000, 34,
+        None, 56, "invalid", 78, 45, -10, 82, 91,
+        34, 56, 67, 23, 89, 95, 102, -999, 34
+    ]
+    
+    print(f"\nRaw Data (with issues):")
+    print(f"   Total entries: {len(raw_data)}")
+    print(f"   Sample: {raw_data[:10]}...")
+    
+    # Step 1: Remove None/Null values
+    print("\nStep 1: Removing None/Null values...")
+    data_no_none = [x for x in raw_data if x is not None]
+    print(f"   After removing None: {len(data_no_none)} entries")
+    
+    # Step 2: Keep only numeric values
+    print("\nStep 2: Filtering numeric values...")
+    numeric_data = [x for x in data_no_none if isinstance(x, (int, float))]
+    print(f"   After numeric filter: {len(numeric_data)} entries")
+    
+    # Step 3: Remove duplicates while preserving order
+    print("\nStep 3: Removing duplicates...")
+    seen = set()
+    unique_data = []
+    for x in numeric_data:
+        if x not in seen:
+            unique_data.append(x)
+            seen.add(x)
+    print(f"   After duplicate removal: {len(unique_data)} entries")
+    
+    # Step 4: Handle outliers (using IQR method)
+    print("\nStep 4: Detecting and handling outliers...")
+    sorted_data = sorted(unique_data)
+    q1 = sorted_data[len(sorted_data)//4]
+    q3 = sorted_data[3*len(sorted_data)//4]
+    iqr = q3 - q1
+    lower_bound = q1 - 1.5 * iqr
+    upper_bound = q3 + 1.5 * iqr
+    
+    outliers = [x for x in unique_data if x < lower_bound or x > upper_bound]
+    cleaned_data = [x for x in unique_data if lower_bound <= x <= upper_bound]
+    
+    print(f"   Q1: {q1}, Q3: {q3}, IQR: {iqr}")
+    print(f"   Lower bound: {lower_bound:.2f}, Upper bound: {upper_bound:.2f}")
+    print(f"   Outliers found: {outliers}")
+    print(f"   After outlier removal: {len(cleaned_data)} entries")
+    
+    # Step 5: Data transformation (normalization)
+    print("\nStep 5: Normalizing data (0-1 scale)...")
+    min_val = min(cleaned_data)
+    max_val = max(cleaned_data)
+    
+    if max_val > min_val:
+        normalized_data = [(x - min_val) / (max_val - min_val) for x in cleaned_data]
+    else:
+        normalized_data = [0.5] * len(cleaned_data)
+    
+    print(f"   Min value: {min_val}, Max value: {max_val}")
+    print(f"   Normalized data sample: {normalized_data[:5]}...")
+    
+    # Step 6: Statistical summary
+    print("\nStep 6: Generating statistical summary...")
+    mean = sum(cleaned_data) / len(cleaned_data)
+    variance = sum((x - mean) ** 2 for x in cleaned_data) / len(cleaned_data)
+    std_dev = variance ** 0.5
+    
+    print(f"   Mean: {mean:.2f}")
+    print(f"   Standard Deviation: {std_dev:.2f}")
+    print(f"   Variance: {variance:.2f}")
+    
+    print("\nData cleaning completed successfully!")
+    return cleaned_data, normalized_data
+
+# Run data cleaning pipeline
+cleaned, normalized = data_cleaning_pipeline()
+
+# -------------------- CLIENT PROJECT 5: STUDENT GRADE ANALYZER --------------------
+print("\n" + "="*50)
+print("CLIENT PROJECT 5: Student Grade Analysis System")
+print("="*50)
+
+def student_grade_analyzer():
+    """
+    Analyze student grades using various data structures and functions.
+    Demonstrates dictionaries, list comprehensions, lambda functions, and data transformations.
+    """
+    print("\nSTUDENT GRADE ANALYZER")
+    print("="*35)
+    
+    # Sample student data
+    students = [
+        {"id": 101, "name": "Alice", "grades": [85, 92, 78, 88, 95]},
+        {"id": 102, "name": "Bob", "grades": [72, 68, 75, 80, 70]},
+        {"id": 103, "name": "Charlie", "grades": [95, 98, 92, 96, 94]},
+        {"id": 104, "name": "Diana", "grades": [65, 70, 68, 72, 60]},
+        {"id": 105, "name": "Ethan", "grades": [88, 85, 90, 87, 89]}
+    ]
+    
+    print(f"\nTotal Students: {len(students)}")
+    
+    # Calculate averages using list comprehension and lambda
+    print("\nCalculating student averages...")
+    for student in students:
+        avg = sum(student["grades"]) / len(student["grades"])
+        student["average"] = round(avg, 2)
+        print(f"   {student['name']}: {student['average']}")
+    
+    # Find top performer using lambda and max()
+    top_student = max(students, key=lambda s: s["average"])
+    print(f"\nTop Performer: {top_student['name']} with average {top_student['average']}")
+    
+    # Find students needing improvement (average < 75)
+    print("\nStudents needing improvement (average < 75):")
+    improvement_needed = [s for s in students if s["average"] < 75]
+    if improvement_needed:
+        for s in improvement_needed:
+            print(f"   {s['name']}: {s['average']}")
+    else:
+        print("   All students are performing well!")
+    
+    # Grade distribution
+    print("\nGrade Distribution:")
+    grade_categories = {
+        "A (90-100)": len([s for s in students if s["average"] >= 90]),
+        "B (80-89)": len([s for s in students if 80 <= s["average"] < 90]),
+        "C (70-79)": len([s for s in students if 70 <= s["average"] < 80]),
+        "D (60-69)": len([s for s in students if 60 <= s["average"] < 70]),
+        "F (<60)": len([s for s in students if s["average"] < 60])
+    }
+    
+    for category, count in grade_categories.items():
+        if count > 0:
+            print(f"   {category}: {count} student(s)")
+    
+    # Class statistics
+    print("\nClass Statistics:")
+    averages = [s["average"] for s in students]
+    class_avg = sum(averages) / len(averages)
+    print(f"   Class Average: {class_avg:.2f}")
+    print(f"   Highest Average: {max(averages)}")
+    print(f"   Lowest Average: {min(averages)}")
+    print(f"   Standard Deviation: {calculate_std_dev(averages):.2f}")
+    
+    # Generate report
+    print("\nGenerating Student Report Cards...")
+    def generate_report_card(student):
+        """Generate a formatted report card for a student"""
+        report = f"""
+        {'='*30}
+        REPORT CARD
+        {'='*30}
+        Name: {student['name']}
+        ID: {student['id']}
+        Average: {student['average']}
+        
+        Individual Grades:
+        """
+        for i, grade in enumerate(student['grades'], 1):
+            report += f"   Exam {i}: {grade}\n"
+        
+        if student['average'] >= 90:
+            report += "\nGrade: A - Excellent Performance!"
+        elif student['average'] >= 80:
+            report += "\nGrade: B - Good Performance!"
+        elif student['average'] >= 70:
+            report += "\nGrade: C - Satisfactory Performance!"
+        elif student['average'] >= 60:
+            report += "\nGrade: D - Needs Improvement"
+        else:
+            report += "\nGrade: F - Failing"
+        
+        return report
+    
+    # Display first report as sample
+    print(generate_report_card(students[0]))
+
+def calculate_std_dev(numbers):
+    """Calculate standard deviation of a list of numbers"""
+    if len(numbers) < 2:
+        return 0
+    mean = sum(numbers) / len(numbers)
+    variance = sum((x - mean) ** 2 for x in numbers) / (len(numbers) - 1)
+    return variance ** 0.5
+
+# Run student grade analyzer
+student_grade_analyzer()
+
+print("\n" + "="*50)
+print("WEEK 2 COMPLETED: Data Structures and Functions Mastered!")
+print("="*50)
+
+
+# ===================================> WEEK 3: NUMPY AND PANDAS FOR DATA MANIPULATION
+
+"""
+=================================================
+THEORY: NumPy and Pandas Explained
+=================================================
+
+NUMPY (Numerical Python):
+------------------------
+NumPy is the fundamental package for scientific computing in Python. It provides support for large, multi-dimensional 
+arrays and matrices, along with a collection of mathematical functions to operate on these arrays efficiently.
+
+Key Features of NumPy:
+1. ndarray: The core data structure - a homogeneous n-dimensional array
+2. Vectorization: Perform operations on entire arrays without explicit loops
+3. Broadcasting: Apply operations between arrays of different shapes
+4. Universal Functions (ufuncs): Fast element-wise array operations
+5. Linear Algebra: Matrix multiplication, decompositions, and more
+6. Random Number Generation: Various probability distributions
+7. Fourier Transforms: Fast Fourier Transform (FFT) capabilities
+
+Why NumPy is Important:
+- Speed: NumPy operations are implemented in C, making them 10-100x faster than pure Python
+- Memory Efficiency: Arrays store data in contiguous memory blocks
+- Convenience: High-level mathematical functions eliminate complex loops
+- Foundation: Many data science libraries (Pandas, SciPy, scikit-learn) are built on NumPy
+
+PANDAS (Python Data Analysis):
+------------------------------
+Pandas is a powerful library for data manipulation and analysis. It provides easy-to-use data structures and 
+functions designed to make working with structured data fast and intuitive.
+
+Key Data Structures:
+1. Series: One-dimensional labeled array (like a column in a spreadsheet)
+   - Can hold any data type
+   - Has labels (index) for each element
+   - Supports vectorized operations
+
+2. DataFrame: Two-dimensional labeled data structure (like a table)
+   - Columns can be different types
+   - Both rows and columns have labels
+   - Size-mutable (can add/delete columns)
+   - Handles missing data gracefully
+
+Key Pandas Operations:
+1. Data Loading: Read from CSV, Excel, SQL, JSON, etc.
+2. Data Cleaning: Handle missing values, remove duplicates
+3. Data Transformation: Filter, sort, group, aggregate
+4. Data Exploration: Summary statistics, correlation analysis
+5. Data Merging: Join/merge multiple DataFrames
+6. Time Series: Specialized date/time functionality
+
+BROADCASTING IN NUMPY:
+---------------------
+Broadcasting is a powerful mechanism that allows NumPy to work with arrays of different shapes during arithmetic 
+operations. The smaller array is "broadcast" across the larger array so that they have compatible shapes.
+
+Broadcasting Rules:
+1. If arrays have different dimensions, the shape of the smaller array is padded with ones on its left side
+2. If the shape doesn't match in any dimension, the array with shape equal to 1 in that dimension is stretched
+3. If any dimension sizes don't match and neither equals 1, broadcasting fails
+"""
+
+print("\n" + "="*50)
+print("WEEK 3: NUMPY AND PANDAS FOR DATA MANIPULATION")
+print("="*50)
+
+# Import required libraries
+import numpy as np
+import pandas as pd
+
+# -------------------- NUMPY FUNDAMENTALS --------------------
+print("\n--- NumPy Fundamentals ---")
+
+# Creating NumPy arrays
+print("\nCreating NumPy Arrays:")
+
+# From Python list
+arr1 = np.array([1, 2, 3, 4, 5])
+print(f"1D array from list: {arr1}")
+
+# 2D array
+arr2 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(f"\n2D array:\n{arr2}")
+
+# Special arrays
+zeros_array = np.zeros((3, 4))
+print(f"\nZeros array (3x4):\n{zeros_array}")
+
+ones_array = np.ones((2, 3))
+print(f"\nOnes array (2x3):\n{ones_array}")
+
+identity_matrix = np.eye(4)
+print(f"\nIdentity matrix (4x4):\n{identity_matrix}")
+
+# Range arrays
+range_array = np.arange(0, 20, 2)
+print(f"\nArange (0 to 20 step 2): {range_array}")
+
+linspace_array = np.linspace(0, 1, 5)
+print(f"Linspace (0 to 1, 5 points): {linspace_array}")
+
+# Random arrays
+random_array = np.random.rand(3, 3)
+print(f"\nRandom array (3x3):\n{random_array}")
+
+random_normal = np.random.randn(1000)  # Normal distribution
+
+# Array attributes
+print(f"\nArray Attributes:")
+print(f"Shape: {arr2.shape}")
+print(f"Size: {arr2.size}")
+print(f"Dimensions: {arr2.ndim}")
+print(f"Data type: {arr2.dtype}")
+print(f"Item size: {arr2.itemsize} bytes")
+
+# -------------------- NUMPY ARRAY OPERATIONS --------------------
+print("\n--- NumPy Array Operations ---")
+
+# Basic arithmetic
+a = np.array([10, 20, 30, 40, 50])
+b = np.array([1, 2, 3, 4, 5])
+
+print(f"Array a: {a}")
+print(f"Array b: {b}")
+print(f"a + b: {a + b}")
+print(f"a - b: {a - b}")
+print(f"a * b: {a * b}")
+print(f"a / b: {a / b}")
+print(f"a ** 2: {a ** 2}")
+
+# Universal functions (ufuncs)
+print(f"\nUniversal Functions:")
+print(f"Square root of a: {np.sqrt(a)}")
+print(f"Exponential of a: {np.exp(a/10):.2f}")
+print(f"Log of a: {np.log(a)}")
+print(f"Sin of a: {np.sin(a)}")
+
+# Aggregation functions
+print(f"\nAggregation Functions:")
+print(f"Sum: {np.sum(a)}")
+print(f"Mean: {np.mean(a)}")
+print(f"Median: {np.median(a)}")
+print(f"Standard Deviation: {np.std(a):.2f}")
+print(f"Variance: {np.var(a):.2f}")
+print(f"Minimum: {np.min(a)}")
+print(f"Maximum: {np.max(a)}")
+print(f"Min index: {np.argmin(a)}")
+print(f"Max index: {np.argmax(a)}")
+
+# Axis operations on 2D arrays
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(f"\nMatrix:\n{matrix}")
+print(f"Sum across rows (axis=0): {np.sum(matrix, axis=0)}")
+print(f"Sum across columns (axis=1): {np.sum(matrix, axis=1)}")
+print(f"Mean across rows: {np.mean(matrix, axis=0)}")
+print(f"Mean across columns: {np.mean(matrix, axis=1)}")
+
+# -------------------- NUMPY INDEXING AND SLICING --------------------
+print("\n--- NumPy Indexing and Slicing ---")
+
+arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+print(f"Original array:\n{arr}")
+
+# Basic indexing
+print(f"\nElement at [1, 2]: {arr[1, 2]}")
+print(f"First row: {arr[0]}")
+print(f"Last column: {arr[:, -1]}")
+
+# Slicing
+print(f"\nFirst two rows, first two columns:\n{arr[:2, :2]}")
+print(f"Every other element: {arr[::2, ::2]}")
+
+# Boolean indexing
+condition = arr > 5
+print(f"\nBoolean mask (arr > 5):\n{condition}")
+print(f"Elements > 5: {arr[condition]}")
+
+# Fancy indexing
+indices = [0, 2]
+print(f"\nRows 0 and 2:\n{arr[indices]}")
+print(f"Columns 1 and 3:\n{arr[:, [1, 3]]}")
+
+# -------------------- BROADCASTING DEMONSTRATION --------------------
+print("\n--- Broadcasting Demonstration ---")
+
+# Scalar broadcasting
+arr = np.array([1, 2, 3, 4, 5])
+print(f"Array: {arr}")
+print(f"Array + 10: {arr + 10}")
+print(f"Array * 2: {arr * 2}")
+
+# 1D and 2D broadcasting
+arr_2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+arr_1d = np.array([10, 20, 30])
+
+print(f"\n2D array:\n{arr_2d}")
+print(f"1D array: {arr_1d}")
+print(f"2D + 1D:\n{arr_2d + arr_1d}")
+
+# Broadcasting with different dimensions
+arr_3d = np.random.rand(2, 3, 4)
+arr_2d = np.random.rand(3, 4)
+print(f"\n3D array shape: {arr_3d.shape}")
+print(f"2D array shape: {arr_2d.shape}")
+print(f"Broadcast result shape: {(arr_3d + arr_2d).shape}")
+
+# -------------------- PANDAS SERIES --------------------
+print("\n--- Pandas Series ---")
+
+# Creating Series
+s1 = pd.Series([10, 20, 30, 40, 50])
+print(f"Series with default index:\n{s1}")
+
+s2 = pd.Series([10, 20, 30, 40, 50], index=['a', 'b', 'c', 'd', 'e'])
+print(f"\nSeries with custom index:\n{s2}")
+
+# Series from dictionary
+data = {'apple': 5, 'banana': 3, 'cherry': 7, 'date': 2}
+s3 = pd.Series(data)
+print(f"\nSeries from dictionary:\n{s3}")
+
+# Series operations
+print(f"\nSeries operations:")
+print(f"Values > 3: {s3[s3 > 3]}")
+print(f"Mean: {s3.mean()}")
+print(f"Sum: {s3.sum()}")
+print(f"Description:\n{s3.describe()}")
+
+# -------------------- PANDAS DATAFRAME --------------------
+print("\n--- Pandas DataFrame ---")
+
+# Creating DataFrame from dictionary
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Ethan'],
+    'Age': [25, 30, 35, 28, 32],
+    'City': ['New York', 'London', 'Paris', 'Tokyo', 'Sydney'],
+    'Salary': [50000, 60000, 70000, 55000, 65000],
+    'Experience': [2, 5, 8, 3, 6]
+}
+
+df = pd.DataFrame(data)
+print(f"DataFrame from dictionary:\n{df}")
+
+# DataFrame from CSV (commented out - would need actual file)
+# df_csv = pd.read_csv('filename.csv')
+# print(df_csv.head())
+
+# DataFrame properties
+print(f"\nDataFrame Properties:")
+print(f"Shape: {df.shape}")
+print(f"Columns: {df.columns.tolist()}")
+print(f"Index: {df.index.tolist()}")
+print(f"Data types:\n{df.dtypes}")
+
+# Viewing data
+print(f"\nFirst 3 rows:\n{df.head(3)}")
+print(f"Last 2 rows:\n{df.tail(2)}")
+print(f"Info:\n{df.info()}")
+print(f"Description:\n{df.describe()}")
+
+# -------------------- PANDAS DATA SELECTION --------------------
+print("\n--- Pandas Data Selection ---")
+
+# Column selection
+print(f"Single column (Name):\n{df['Name']}")
+print(f"Multiple columns:\n{df[['Name', 'Salary']]}")
+
+# Row selection by index
+print(f"First row (iloc):\n{df.iloc[0]}")
+print(f"First 3 rows:\n{df.iloc[:3]}")
+print(f"Specific rows and columns:\n{df.iloc[1:4, [0, 2, 3]]}")
+
+# Row selection by label
+print(f"Row with index 2 (loc):\n{df.loc[2]}")
+print(f"Rows with specific labels:\n{df.loc[1:3, ['Name', 'City']]}")
+
+# Conditional selection
+print(f"\nEmployees with salary > 60000:\n{df[df['Salary'] > 60000]}")
+print(f"Employees in specific cities:\n{df[df['City'].isin(['New York', 'London'])]}")
+print(f"Complex condition:\n{df[(df['Age'] > 25) & (df['Experience'] > 3)]}")
+
+# -------------------- PANDAS DATA MANIPULATION --------------------
+print("\n--- Pandas Data Manipulation ---")
+
+# Adding new column
+df['Bonus'] = df['Salary'] * 0.1
+print(f"DataFrame with Bonus column:\n{df}")
+
+df['Salary Category'] = pd.cut(df['Salary'], bins=[0, 55000, 65000, 100000], labels=['Low', 'Medium', 'High'])
+print(f"\nWith Salary Category:\n{df}")
+
+# Modifying data
+df.loc[df['Name'] == 'Alice', 'Salary'] = 52000
+print(f"\nAfter modifying Alice's salary:\n{df}")
+
+# Dropping columns
+df_without_bonus = df.drop('Bonus', axis=1)
+print(f"\nWithout Bonus column:\n{df_without_bonus.head()}")
+
+# Handling missing values
+df_with_nan = df.copy()
+df_with_nan.loc[2, 'Salary'] = np.nan
+print(f"\nDataFrame with NaN:\n{df_with_nan}")
+print(f"Is null?:\n{df_with_nan.isnull().sum()}")
+df_filled = df_with_nan.fillna(df_with_nan['Salary'].mean())
+print(f"\nAfter filling NaN with mean:\n{df_filled}")
+
+# -------------------- PANDAS GROUPING AND AGGREGATION --------------------
+print("\n--- Pandas Grouping and Aggregation ---")
+
+# Sample sales data
+sales_data = {
+    'Product': ['A', 'B', 'A', 'C', 'B', 'A', 'C', 'B', 'A', 'C'],
+    'Region': ['North', 'North', 'South', 'North', 'South', 'South', 'North', 'South', 'North', 'South'],
+    'Sales': [100, 150, 120, 200, 180, 130, 170, 160, 140, 190],
+    'Quantity': [10, 15, 12, 20, 18, 13, 17, 16, 14, 19]
+}
+
+sales_df = pd.DataFrame(sales_data)
+print(f"Sales Data:\n{sales_df}")
+
+# Group by single column
+product_group = sales_df.groupby('Product')
+print(f"\nGroup by Product:")
+print(f"Sum:\n{product_group.sum()}")
+print(f"Mean:\n{product_group.mean()}")
+print(f"Count:\n{product_group.count()}")
+
+# Group by multiple columns
+region_product = sales_df.groupby(['Region', 'Product'])
+print(f"\nGroup by Region and Product:")
+print(f"Sales total:\n{region_product['Sales'].sum()}")
+
+# Multiple aggregations
+print(f"\nMultiple aggregations:")
+agg_results = sales_df.groupby('Product').agg({
+    'Sales': ['sum', 'mean', 'max', 'min'],
+    'Quantity': ['sum', 'mean']
+})
+print(agg_results)
+
+# -------------------- PANDAS MERGING AND JOINING --------------------
+print("\n--- Pandas Merging and Joining ---")
+
+# Create two DataFrames
+employees = pd.DataFrame({
+    'emp_id': [1, 2, 3, 4, 5],
+    'name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Ethan'],
+    'dept_id': [101, 102, 101, 103, 102]
+})
+
+departments = pd.DataFrame({
+    'dept_id': [101, 102, 103, 104],
+    'dept_name': ['HR', 'IT', 'Finance', 'Marketing']
+})
+
+print(f"Employees:\n{employees}")
+print(f"\nDepartments:\n{departments}")
+
+# Inner join
+merged_inner = pd.merge(employees, departments, on='dept_id', how='inner')
+print(f"\nInner Join:\n{merged_inner}")
+
+# Left join
+merged_left = pd.merge(employees, departments, on='dept_id', how='left')
+print(f"\nLeft Join:\n{merged_left}")
+
+# Right join
+merged_right = pd.merge(employees, departments, on='dept_id', how='right')
+print(f"\nRight Join:\n{merged_right}")
+
+# Outer join
+merged_outer = pd.merge(employees, departments, on='dept_id', how='outer')
+print(f"\nOuter Join:\n{merged_outer}")
+
+# -------------------- CLIENT PROJECT 6: SALES DATA ANALYSIS --------------------
+print("\n" + "="*50)
+print("CLIENT PROJECT 6: Sales Data Analysis with NumPy and Pandas")
+print("="*50)
+
+def sales_data_analysis():
+    """
+    Comprehensive sales data analysis using NumPy and Pandas.
+    Demonstrates data cleaning, aggregation, grouping, and visualization preparation.
+    """
+    print("\nSALES DATA ANALYSIS SYSTEM")
+    print("="*35)
+    
+    # Generate sample sales data
+    np.random.seed(42)
+    n_records = 100
+    
+    products = ['Laptop', 'Smartphone', 'Tablet', 'Monitor', 'Keyboard', 'Mouse', 'Printer', 'Scanner']
+    regions = ['North', 'South', 'East', 'West']
+    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+    
+    data = {
+        'Date': pd.date_range(start='2024-01-01', periods=n_records, freq='D'),
+        'Product': np.random.choice(products, n_records),
+        'Region': np.random.choice(regions, n_records),
+        'Month': np.random.choice(months, n_records),
+        'Units_Sold': np.random.randint(1, 50, n_records),
+        'Unit_Price': np.random.choice([500, 800, 200, 300, 50, 30, 150, 250], n_records),
+        'Discount': np.random.choice([0, 0.05, 0.10, 0.15, 0.20], n_records, p=[0.5, 0.2, 0.15, 0.1, 0.05])
+    }
+    
+    sales_df = pd.DataFrame(data)
+    
+    # Add calculated columns
+    sales_df['Revenue'] = sales_df['Units_Sold'] * sales_df['Unit_Price']
+    sales_df['Discounted_Revenue'] = sales_df['Revenue'] * (1 - sales_df['Discount'])
+    sales_df['Profit'] = sales_df['Discounted_Revenue'] * 0.3  # Assume 30% profit margin
+    
+    print(f"\nSales Data Overview:")
+    print(f"Total Records: {len(sales_df)}")
+    print(f"Date Range: {sales_df['Date'].min()} to {sales_df['Date'].max()}")
+    print(f"\nFirst 5 records:")
+    print(sales_df.head())
+    
+    # Data cleaning and validation
+    print("\n" + "="*35)
+    print("DATA CLEANING AND VALIDATION")
+    print("="*35)
+    
+    # Check for missing values
+    print(f"\nMissing Values:")
+    print(sales_df.isnull().sum())
+    
+    # Check data types
+    print(f"\nData Types:")
+    print(sales_df.dtypes)
+    
+    # Remove duplicates if any
+    duplicates = sales_df.duplicated().sum()
+    if duplicates > 0:
+        sales_df = sales_df.drop_duplicates()
+        print(f"\nRemoved {duplicates} duplicate records")
+    
+    # Validate numeric columns
+    print(f"\nData Validation:")
+    print(f"Units_Sold - Min: {sales_df['Units_Sold'].min()}, Max: {sales_df['Units_Sold'].max()}")
+    print(f"Unit_Price - Min: {sales_df['Unit_Price'].min()}, Max: {sales_df['Unit_Price'].max()}")
+    
+    # Overall statistics
+    print("\n" + "="*35)
+    print("OVERALL SALES STATISTICS")
+    print("="*35)
+    
+    print(f"\nTotal Revenue: ${sales_df['Revenue'].sum():,.2f}")
+    print(f"Total Discounted Revenue: ${sales_df['Discounted_Revenue'].sum():,.2f}")
+    print(f"Total Profit: ${sales_df['Profit'].sum():,.2f}")
+    print(f"Average Transaction Value: ${sales_df['Revenue'].mean():,.2f}")
+    print(f"Total Units Sold: {sales_df['Units_Sold'].sum():,}")
+    
+    # Product analysis
+    print("\n" + "="*35)
+    print("PRODUCT ANALYSIS")
+    print("="*35)
+    
+    product_performance = sales_df.groupby('Product').agg({
+        'Units_Sold': 'sum',
+        'Revenue': 'sum',
+        'Profit': 'sum',
+        'Discount': 'mean'
+    }).round(2)
+    
+    product_performance['Avg_Price'] = sales_df.groupby('Product')['Unit_Price'].mean().round(2)
+    product_performance = product_performance.sort_values('Revenue', ascending=False)
+    
+    print("\nProduct Performance (sorted by Revenue):")
+    print(product_performance)
+    
+    # Regional analysis
+    print("\n" + "="*35)
+    print("REGIONAL ANALYSIS")
+    print("="*35)
+    
+    regional_performance = sales_df.groupby('Region').agg({
+        'Units_Sold': 'sum',
+        'Revenue': 'sum',
+        'Profit': 'sum'
+    }).round(2)
+    
+    regional_performance['Market_Share'] = (regional_performance['Revenue'] / regional_performance['Revenue'].sum() * 100).round(2)
+    print("\nRegional Performance:")
+    print(regional_performance)
+    
+    # Monthly trends
+    print("\n" + "="*35)
+    print("MONTHLY TRENDS")
+    print("="*35)
+    
+    monthly_trends = sales_df.groupby('Month').agg({
+        'Revenue': 'sum',
+        'Units_Sold': 'sum',
+        'Profit': 'sum'
+    }).round(2)
+    
+    # Reorder months
+    month_order = {'Jan':1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6}
+    monthly_trends = monthly_trends.reset_index()
+    monthly_trends['Month_Num'] = monthly_trends['Month'].map(month_order)
+    monthly_trends = monthly_trends.sort_values('Month_Num').set_index('Month')
+    monthly_trends = monthly_trends.drop('Month_Num', axis=1)
+    
+    print("\nMonthly Trends:")
+    print(monthly_trends)
+    
+    # Discount analysis
+    print("\n" + "="*35)
+    print("DISCOUNT ANALYSIS")
+    print("="*35)
+    
+    discount_impact = sales_df.groupby('Discount').agg({
+        'Revenue': 'sum',
+        'Units_Sold': 'sum',
+        'Discount': 'count'
+    }).rename(columns={'Discount': 'Transaction_Count'})
+    
+    print("\nImpact of Discounts:")
+    print(discount_impact)
+    
+    # Top products by region
+    print("\n" + "="*35)
+    print("TOP PRODUCTS BY REGION")
+    print("="*35)
+    
+    top_by_region = sales_df.groupby(['Region', 'Product'])['Revenue'].sum().reset_index()
+    top_by_region = top_by_region.sort_values(['Region', 'Revenue'], ascending=[True, False])
+    
+    for region in regions:
+        region_top = top_by_region[top_by_region['Region'] == region].head(3)
+        print(f"\n{region} Region - Top 3 Products:")
+        for idx, row in region_top.iterrows():
+            print(f"   {row['Product']}: ${row['Revenue']:,.2f}")
+    
+    # Advanced analytics
+    print("\n" + "="*35)
+    print("ADVANCED ANALYTICS")
+    print("="*35)
+    
+    # Correlation matrix
+    numeric_cols = sales_df.select_dtypes(include=[np.number]).columns
+    correlation_matrix = sales_df[numeric_cols].corr()
+    
+    print("\nCorrelation Matrix (Key Relationships):")
+    print(f"Units_Sold vs Revenue: {correlation_matrix.loc['Units_Sold', 'Revenue']:.3f}")
+    print(f"Discount vs Revenue: {correlation_matrix.loc['Discount', 'Revenue']:.3f}")
+    print(f"Unit_Price vs Revenue: {correlation_matrix.loc['Unit_Price', 'Revenue']:.3f}")
+    
+    # Statistical summary by product category
+    print("\nStatistical Summary by Product:")
+    for product in products:
+        product_data = sales_df[sales_df['Product'] == product]
+        if len(product_data) > 0:
+            print(f"\n{product}:")
+            print(f"   Transactions: {len(product_data)}")
+            print(f"   Avg Units/Transaction: {product_data['Units_Sold'].mean():.1f}")
+            print(f"   Avg Revenue/Transaction: ${product_data['Revenue'].mean():,.2f}")
+            print(f"   Total Revenue: ${product_data['Revenue'].sum():,.2f}")
+    
+    # Export summary for reporting
+    print("\n" + "="*35)
+    print("EXPORTING SUMMARY REPORTS")
+    print("="*35)
+    
+    # Create summary dictionary
+    summary_report = {
+        'Total Revenue': sales_df['Revenue'].sum(),
+        'Total Profit': sales_df['Profit'].sum(),
+        'Total Units': sales_df['Units_Sold'].sum(),
+        'Average Discount': sales_df['Discount'].mean(),
+        'Best Region': regional_performance['Revenue'].idxmax(),
+        'Best Product': product_performance['Revenue'].idxmax(),
+        'Total Transactions': len(sales_df)
+    }
+    
+    print("\nExecutive Summary:")
+    for key, value in summary_report.items():
+        if isinstance(value, float):
+            print(f"   {key}: {value:,.2f}")
+        else:
+            print(f"   {key}: {value}")
+    
+    return sales_df, product_performance, regional_performance, monthly_trends
+
+# Run sales data analysis
+sales_results = sales_data_analysis()
+
+print("\n" + "="*50)
+print("WEEK 3 COMPLETED: NumPy and Pandas Mastered!")
+print("="*50)
+
+
+# ===================================> WEEK 4: DATA VISUALIZATION WITH MATPLOTLIB AND SEABORN
+
+"""
+=================================================
+THEORY: Data Visualization Explained
+=================================================
+
+MATPLOTLIB:
+-----------
+Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.
+It provides a MATLAB-like interface and gives you complete control over every aspect of a figure.
+
+Key Components of Matplotlib:
+1. Figure: The overall window or page that contains everything
+2. Axes: The area where data is plotted (can have multiple axes in a figure)
+3. Axis: The x and y axis lines, ticks, labels, etc.
+4. Artist: Everything visible in a figure (text, lines, patches, etc.)
+
+Types of Plots in Matplotlib:
+1. Line Plot: Shows trends over time or continuous data
+2. Scatter Plot: Shows relationship between two variables
+3. Bar Plot: Compares categories or shows distributions
+4. Histogram: Shows distribution of numerical data
+5. Pie Chart: Shows proportional composition
+6. Box Plot: Shows distribution and outliers
+
+SEABORN:
+--------
+Seaborn is built on top of Matplotlib and provides a high-level interface for drawing statistical graphics.
+It comes with several built-in themes and color palettes to make plots more attractive.
+
+Advantages of Seaborn:
+1. Statistical Focus: Built-in functions for statistical analysis
+2. Beautiful Defaults: Attractive color schemes and styles out of the box
+3. Data-aware: Works directly with pandas DataFrames
+4. Complex Visualizations: Easy creation of complex plots like heatmaps, pairplots, etc.
+
+Types of Plots in Seaborn:
+1. Relational Plots: scatterplot(), lineplot() - show relationships
+2. Categorical Plots: barplot(), boxplot(), violinplot() - show distributions by category
+3. Distribution Plots: histplot(), kdeplot(), rugplot() - show data distributions
+4. Regression Plots: regplot(), lmplot() - show linear relationships
+5. Matrix Plots: heatmap(), clustermap() - show matrix data
+6. Multi-plot Grids: FacetGrid, pairplot() - multiple plots in a grid
+"""
+
+print("\n" + "="*50)
+print("WEEK 4: DATA VISUALIZATION WITH MATPLOTLIB AND SEABORN")
+print("="*50)
+
+# Import visualization libraries
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set styles
+plt.style.use('default')
+sns.set_theme(style="whitegrid")
+
+# -------------------- MATPLOTLIB BASICS --------------------
+print("\n--- Matplotlib Basics ---")
+
+# Simple line plot
+print("\nCreating simple line plot...")
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+y = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, 'b-', linewidth=2, label='y = 2x')
+plt.plot(x, [xi**2 for xi in x], 'r--', linewidth=2, label='y = x²')
+plt.title('Simple Line Plot Example', fontsize=14)
+plt.xlabel('X Axis', fontsize=12)
+plt.ylabel('Y Axis', fontsize=12)
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.show()
+
+# Multiple subplots
+print("\nCreating multiple subplots...")
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+# Plot 1: Line plot
+axes[0, 0].plot(x, y, 'g-', linewidth=2)
+axes[0, 0].set_title('Line Plot')
+axes[0, 0].set_xlabel('X')
+axes[0, 0].set_ylabel('Y')
+
+# Plot 2: Scatter plot
+axes[0, 1].scatter(x, y, c='red', s=50, alpha=0.6)
+axes[0, 1].set_title('Scatter Plot')
+axes[0, 1].set_xlabel('X')
+axes[0, 1].set_ylabel('Y')
+
+# Plot 3: Bar plot
+categories = ['A', 'B', 'C', 'D', 'E']
+values = [23, 45, 56, 78, 32]
+axes[1, 0].bar(categories, values, color='skyblue', edgecolor='navy')
+axes[1, 0].set_title('Bar Plot')
+axes[1, 0].set_xlabel('Category')
+axes[1, 0].set_ylabel('Value')
+
+# Plot 4: Histogram
+data = np.random.randn(1000)
+axes[1, 1].hist(data, bins=30, color='purple', alpha=0.7, edgecolor='black')
+axes[1, 1].set_title('Histogram')
+axes[1, 1].set_xlabel('Value')
+axes[1, 1].set_ylabel('Frequency')
+
+plt.tight_layout()
+plt.show()
+
+# -------------------- ADVANCED MATPLOTLIB --------------------
+print("\n--- Advanced Matplotlib ---")
+
+# Creating a figure with custom styling
+fig = plt.figure(figsize=(12, 8))
+
+# Customizing axes
+ax1 = fig.add_subplot(221)
+ax2 = fig.add_subplot(222)
+ax3 = fig.add_subplot(223)
+ax4 = fig.add_subplot(224)
+
+# Plot 1: Filled line plot
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+ax1.fill_between(x, y1, y2, alpha=0.3, color='skyblue')
+ax1.plot(x, y1, 'b-', label='sin(x)')
+ax1.plot(x, y2, 'r-', label='cos(x)')
+ax1.set_title('Filled Line Plot')
+ax1.legend()
+ax1.grid(True, alpha=0.3)
+
+# Plot 2: Stacked bar chart
+categories = ['Q1', 'Q2', 'Q3', 'Q4']
+product_a = [100, 120, 110, 130]
+product_b = [80, 90, 95, 105]
+product_c = [60, 70, 65, 80]
+
+ax2.bar(categories, product_a, label='Product A', alpha=0.8)
+ax2.bar(categories, product_b, bottom=product_a, label='Product B', alpha=0.8)
+ax2.bar(categories, product_c, bottom=[i+j for i,j in zip(product_a, product_b)], label='Product C', alpha=0.8)
+ax2.set_title('Stacked Bar Chart')
+ax2.legend()
+
+# Plot 3: Pie chart
+sizes = [30, 25, 20, 15, 10]
+labels = ['Category A', 'Category B', 'Category C', 'Category D', 'Category E']
+colors = ['gold', 'lightcoral', 'lightskyblue', 'lightgreen', 'orange']
+ax3.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+ax3.set_title('Pie Chart')
+ax3.axis('equal')
+
+# Plot 4: Box plot
+data = [np.random.normal(0, std, 100) for std in range(1, 5)]
+ax4.boxplot(data, labels=['Group 1', 'Group 2', 'Group 3', 'Group 4'])
+ax4.set_title('Box Plot')
+ax4.set_xlabel('Groups')
+ax4.set_ylabel('Values')
+ax4.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+
+# -------------------- SEABORN BASICS --------------------
+print("\n--- Seaborn Basics ---")
+
+# Load sample datasets
+tips = sns.load_dataset('tips')
+iris = sns.load_dataset('iris')
+titanic = sns.load_dataset('titanic')
+
+print(f"Tips dataset shape: {tips.shape}")
+print(f"Iris dataset shape: {iris.shape}")
+print(f"Titanic dataset shape: {titanic.shape}")
+
+# Distribution plots
+print("\nCreating distribution plots...")
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+# Histogram with KDE
+sns.histplot(data=tips, x='total_bill', kde=True, ax=axes[0, 0])
+axes[0, 0].set_title('Total Bill Distribution')
+
+# KDE plot
+sns.kdeplot(data=tips, x='total_bill', hue='sex', fill=True, alpha=0.5, ax=axes[0, 1])
+axes[0, 1].set_title('Total Bill by Gender')
+
+# Box plot
+sns.boxplot(data=tips, x='day', y='total_bill', ax=axes[1, 0])
+axes[1, 0].set_title('Total Bill by Day')
+
+# Violin plot
+sns.violinplot(data=tips, x='time', y='total_bill', ax=axes[1, 1])
+axes[1, 1].set_title('Total Bill by Time')
+
+plt.tight_layout()
+plt.show()
+
+# -------------------- CATEGORICAL PLOTS --------------------
+print("\n--- Categorical Plots ---")
+
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+# Bar plot
+sns.barplot(data=tips, x='day', y='total_bill', hue='sex', ax=axes[0, 0])
+axes[0, 0].set_title('Average Bill by Day and Gender')
+
+# Count plot
+sns.countplot(data=tips, x='day', hue='smoker', ax=axes[0, 1])
+axes[0, 1].set_title('Number of Transactions by Day and Smoker Status')
+
+# Point plot
+sns.pointplot(data=tips, x='time', y='total_bill', hue='sex', ax=axes[1, 0])
+axes[1, 0].set_title('Bill Trend by Time and Gender')
+
+# Boxen plot (enhanced box plot for large data)
+sns.boxenplot(data=tips, x='day', y='tip', ax=axes[1, 1])
+axes[1, 1].set_title('Tip Distribution by Day')
+
+plt.tight_layout()
+plt.show()
+
+# -------------------- RELATIONAL PLOTS --------------------
+print("\n--- Relational Plots ---")
+
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+# Scatter plot
+sns.scatterplot(data=tips, x='total_bill', y='tip', hue='time', size='size', ax=axes[0, 0])
+axes[0, 0].set_title('Tips vs Total Bill')
+
+# Line plot (with confidence interval)
+sns.lineplot(data=tips, x='size', y='total_bill', hue='time', marker='o', ax=axes[0, 1])
+axes[0, 1].set_title('Average Bill by Party Size')
+
+# Reg plot (scatter with regression line)
+sns.regplot(data=tips, x='total_bill', y='tip', scatter_kws={'alpha':0.5}, ax=axes[1, 0])
+axes[1, 0].set_title('Linear Regression: Tip vs Total Bill')
+
+# Joint plot (can't be placed in subplot, so creating separately)
+# sns.jointplot(data=tips, x='total_bill', y='tip', kind='reg')
+
+# Hexbin plot
+sns.histplot(data=tips, x='total_bill', y='tip', bins=30, ax=axes[1, 1])
+axes[1, 1].set_title('2D Histogram')
+
+plt.tight_layout()
+plt.show()
+
+# -------------------- MATRIX PLOTS --------------------
+print("\n--- Matrix Plots ---")
+
+# Correlation heatmap
+numeric_cols = tips.select_dtypes(include=[np.number]).columns
+correlation = tips[numeric_cols].corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation, annot=True, cmap='coolwarm', center=0, 
+            square=True, linewidths=1, cbar_kws={"shrink": 0.8})
+plt.title('Correlation Heatmap - Tips Dataset')
+plt.show()
+
+# Cluster map (shows hierarchical clustering)
+sns.clustermap(correlation, annot=True, cmap='vlag', center=0, 
+               figsize=(10, 8), linewidths=1)
+plt.title('Clustered Correlation Heatmap')
+plt.show()
+
+# -------------------- MULTI-PLOT GRIDS --------------------
+print("\n--- Multi-Plot Grids ---")
+
+# Pair plot
+print("Creating pair plot (this may take a moment)...")
+sns.pairplot(tips, hue='time', diag_kind='kde')
+plt.suptitle('Pair Plot of Tips Dataset', y=1.02)
+plt.show()
+
+# FacetGrid
+g = sns.FacetGrid(tips, col='time', row='smoker', margin_titles=True)
+g.map(sns.scatterplot, 'total_bill', 'tip', alpha=0.6)
+g.add_legend()
+plt.show()
+
+# -------------------- CLIENT PROJECT 7: COMPREHENSIVE DATA DASHBOARD --------------------
+print("\n" + "="*50)
+print("CLIENT PROJECT 7: Interactive Data Visualization Dashboard")
+print("="*50)
+
+def create_data_dashboard():
+    """
+    Create a comprehensive data visualization dashboard using Matplotlib and Seaborn.
+    Demonstrates various plot types and visualization techniques.
+    """
+    print("\nCREATING DATA VISUALIZATION DASHBOARD")
+    print("="*40)
+    
+    # Load or create dataset
+    np.random.seed(42)
+    
+    # Create customer dataset
+    n_customers = 500
+    
+    customer_data = pd.DataFrame({
+        'Customer_ID': range(1000, 1000 + n_customers),
+        'Age': np.random.randint(18, 70, n_customers),
+        'Annual_Income': np.random.normal(60000, 20000, n_customers).clip(20000, 150000),
+        'Spending_Score': np.random.randint(1, 100, n_customers),
+        'Purchase_Frequency': np.random.randint(1, 20, n_customers),
+        'Average_Transaction': np.random.normal(100, 50, n_customers).clip(10, 500),
+        'Loyalty_Years': np.random.randint(0, 10, n_customers),
+        'Region': np.random.choice(['North', 'South', 'East', 'West'], n_customers),
+        'Segment': np.random.choice(['Budget', 'Regular', 'Premium'], n_customers, p=[0.3, 0.5, 0.2])
+    })
+    
+    # Add calculated fields
+    customer_data['Total_Spending'] = customer_data['Purchase_Frequency'] * customer_data['Average_Transaction'] * 12
+    customer_data['LTV'] = customer_data['Total_Spending'] * customer_data['Loyalty_Years'].clip(1, 10)
+    
+    print(f"\nDataset created with {len(customer_data)} customers")
+    print(f"Columns: {customer_data.columns.tolist()}")
+    print(f"\nFirst 5 records:")
+    print(customer_data.head())
+    
+    # Create dashboard with multiple plots
+    fig = plt.figure(figsize=(20, 16))
+    
+    # Define grid for subplots
+    gs = fig.add_gridspec(4, 3, hspace=0.3, wspace=0.3)
+    
+    # 1. Customer Age Distribution
+    ax1 = fig.add_subplot(gs[0, 0])
+    sns.histplot(data=customer_data, x='Age', bins=20, kde=True, color='skyblue', ax=ax1)
+    ax1.set_title('Customer Age Distribution', fontsize=12, fontweight='bold')
+    ax1.set_xlabel('Age')
+    ax1.set_ylabel('Count')
+    
+    # 2. Income vs Spending Score
+    ax2 = fig.add_subplot(gs[0, 1])
+    scatter = ax2.scatter(customer_data['Annual_Income'], customer_data['Spending_Score'], 
+                          c=customer_data['Age'], cmap='viridis', alpha=0.6, s=30)
+    ax2.set_title('Income vs Spending Score', fontsize=12, fontweight='bold')
+    ax2.set_xlabel('Annual Income ($)')
+    ax2.set_ylabel('Spending Score')
+    plt.colorbar(scatter, ax=ax2, label='Age')
+    
+    # 3. Customer Segments
+    ax3 = fig.add_subplot(gs[0, 2])
+    segment_counts = customer_data['Segment'].value_counts()
+    colors = ['#ff9999', '#66b3ff', '#99ff99']
+    ax3.pie(segment_counts.values, labels=segment_counts.index, colors=colors,
+            autopct='%1.1f%%', startangle=90)
+    ax3.set_title('Customer Segments', fontsize=12, fontweight='bold')
+    ax3.axis('equal')
+    
+    # 4. Average Transaction by Region and Segment
+    ax4 = fig.add_subplot(gs[1, 0])
+    avg_trans = customer_data.groupby(['Region', 'Segment'])['Average_Transaction'].mean().unstack()
+    avg_trans.plot(kind='bar', ax=ax4, colormap='Set2')
+    ax4.set_title('Average Transaction by Region and Segment', fontsize=12, fontweight='bold')
+    ax4.set_xlabel('Region')
+    ax4.set_ylabel('Average Transaction ($)')
+    ax4.legend(title='Segment')
+    ax4.tick_params(axis='x', rotation=45)
+    
+    # 5. Box Plot - Spending by Region
+    ax5 = fig.add_subplot(gs[1, 1])
+    sns.boxplot(data=customer_data, x='Region', y='Total_Spending', hue='Segment', ax=ax5)
+    ax5.set_title('Total Spending Distribution by Region', fontsize=12, fontweight='bold')
+    ax5.set_xlabel('Region')
+    ax5.set_ylabel('Total Annual Spending ($)')
+    ax5.legend(title='Segment')
+    
+    # 6. Correlation Heatmap
+    ax6 = fig.add_subplot(gs[1, 2])
+    numeric_cols = ['Age', 'Annual_Income', 'Spending_Score', 'Purchase_Frequency', 
+                    'Average_Transaction', 'Loyalty_Years', 'Total_Spending', 'LTV']
+    corr_matrix = customer_data[numeric_cols].corr()
+    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', center=0, 
+                square=True, fmt='.2f', ax=ax6, cbar_kws={"shrink": 0.8})
+    ax6.set_title('Correlation Matrix', fontsize=12, fontweight='bold')
+    
+    # 7. Violin Plot - LTV by Segment
+    ax7 = fig.add_subplot(gs[2, 0])
+    sns.violinplot(data=customer_data, x='Segment', y='LTV', palette='Set3', ax=ax7)
+    ax7.set_title('Customer Lifetime Value by Segment', fontsize=12, fontweight='bold')
+    ax7.set_xlabel('Segment')
+    ax7.set_ylabel('Lifetime Value ($)')
+    
+    # 8. Line Plot - Age vs Spending
+    ax8 = fig.add_subplot(gs[2, 1])
+    age_groups = customer_data.groupby(pd.cut(customer_data['Age'], bins=10))['Total_Spending'].mean()
+    ax8.plot(age_groups.index.astype(str), age_groups.values, marker='o', linewidth=2, markersize=8)
+    ax8.set_title('Average Spending by Age Group', fontsize=12, fontweight='bold')
+    ax8.set_xlabel('Age Group')
+    ax8.set_ylabel('Average Spending ($)')
+    ax8.tick_params(axis='x', rotation=45)
+    
+    # 9. Bar Plot - Top 10 Customers by LTV
+    ax9 = fig.add_subplot(gs[2, 2])
+    top_customers = customer_data.nlargest(10, 'LTV')[['Customer_ID', 'LTV']]
+    ax9.barh(range(len(top_customers)), top_customers['LTV'].values, color='coral')
+    ax9.set_yticks(range(len(top_customers)))
+    ax9.set_yticklabels([f"ID: {int(id)}" for id in top_customers['Customer_ID'].values])
+    ax9.set_title('Top 10 Customers by LTV', fontsize=12, fontweight='bold')
+    ax9.set_xlabel('Lifetime Value ($)')
+    ax9.invert_yaxis()
+    
+    # 10. Scatter Plot Matrix (bottom row spanning all columns)
+    ax10 = fig.add_subplot(gs[3, :])
+    
+    # Select sample for scatter matrix
+    sample_cols = ['Age', 'Annual_Income', 'Spending_Score', 'Total_Spending']
+    sample_data = customer_data[sample_cols].sample(100)
+    
+    # Create scatter matrix manually
+    n_vars = len(sample_cols)
+    scatter_data = sample_data.values
+    
+    # Plot scatter matrix
+    for i in range(n_vars):
+        for j in range(n_vars):
+            if i != j:
+                # This is complex for manual implementation
+                # Using pairplot would be better but can't embed in subplot
+                pass
+    
+    # Instead, create a 2D density plot
+    from scipy.stats import gaussian_kde
+    
+    x = customer_data['Annual_Income']
+    y = customer_data['Total_Spending']
+    
+    # Calculate the point density
+    xy = np.vstack([x, y])
+    z = gaussian_kde(xy)(xy)
+    
+    # Sort the points by density for better visualization
+    idx = z.argsort()
+    x, y, z = x.iloc[idx], y.iloc[idx], z[idx]
+    
+    ax10.scatter(x, y, c=z, s=50, alpha=0.5, cmap='viridis')
+    ax10.set_title('Income vs Total Spending (Density Colored)', fontsize=12, fontweight='bold')
+    ax10.set_xlabel('Annual Income ($)')
+    ax10.set_ylabel('Total Spending ($)')
+    
+    plt.suptitle('CUSTOMER ANALYTICS DASHBOARD', fontsize=16, fontweight='bold', y=0.98)
+    plt.show()
+    
+    # Additional standalone visualizations
+    
+    # 11. Pair Plot (separate figure)
+    print("\nCreating detailed pair plot...")
+    sns.pairplot(customer_data[['Age', 'Annual_Income', 'Spending_Score', 'Total_Spending', 'Segment']], 
+                 hue='Segment', diag_kind='kde')
+    plt.suptitle('Customer Metrics Pair Plot', y=1.02)
+    plt.show()
+    
+    # 12. Regional Analysis Dashboard
+    fig2, axes = plt.subplots(2, 2, figsize=(15, 12))
+    
+    # Regional customer count
+    region_counts = customer_data['Region'].value_counts()
+    axes[0, 0].pie(region_counts.values, labels=region_counts.index, autopct='%1.1f%%',
+                   colors=['#ff9999', '#66b3ff', '#99ff99', '#ffcc99'])
+    axes[0, 0].set_title('Customer Distribution by Region')
+    
+    # Regional average metrics
+    region_metrics = customer_data.groupby('Region')[['Total_Spending', 'LTV']].mean()
+    region_metrics.plot(kind='bar', ax=axes[0, 1], color=['#ff9999', '#66b3ff'])
+    axes[0, 1].set_title('Average Metrics by Region')
+    axes[0, 1].set_xlabel('Region')
+    axes[0, 1].set_ylabel('Average Value ($)')
+    axes[0, 1].tick_params(axis='x', rotation=0)
+    
+    # Regional segment composition
+    region_segment = pd.crosstab(customer_data['Region'], customer_data['Segment'], normalize='index')
+    region_segment.plot(kind='bar', stacked=True, ax=axes[1, 0], colormap='Set3')
+    axes[1, 0].set_title('Segment Composition by Region')
+    axes[1, 0].set_xlabel('Region')
+    axes[1, 0].set_ylabel('Proportion')
+    axes[1, 0].legend(title='Segment')
+    
+    # KDE plot by region
+    for region in customer_data['Region'].unique():
+        region_data = customer_data[customer_data['Region'] == region]['Total_Spending']
+        sns.kdeplot(region_data, label=region, ax=axes[1, 1])
+    axes[1, 1].set_title('Spending Distribution by Region')
+    axes[1, 1].set_xlabel('Total Spending ($)')
+    axes[1, 1].set_ylabel('Density')
+    axes[1, 1].legend()
+    
+    plt.suptitle('REGIONAL ANALYSIS DASHBOARD', fontsize=14, fontweight='bold')
+    plt.tight_layout()
+    plt.show()
+    
+    # Generate summary statistics
+    print("\n" + "="*40)
+    print("DASHBOARD SUMMARY STATISTICS")
+    print("="*40)
+    
+    print(f"\nTotal Customers: {len(customer_data)}")
+    print(f"Average Age: {customer_data['Age'].mean():.1f}")
+    print(f"Average Annual Income: ${customer_data['Annual_Income'].mean():,.2f}")
+    print(f"Average Spending Score: {customer_data['Spending_Score'].mean():.1f}")
+    print(f"Average Total Spending: ${customer_data['Total_Spending'].mean():,.2f}")
+    print(f"Average LTV: ${customer_data['LTV'].mean():,.2f}")
+    
+    print(f"\nRegional Breakdown:")
+    for region in customer_data['Region'].unique():
+        region_data = customer_data[customer_data['Region'] == region]
+        print(f"   {region}: {len(region_data)} customers, Avg Spending: ${region_data['Total_Spending'].mean():,.2f}")
+    
+    print(f"\nSegment Breakdown:")
+    for segment in customer_data['Segment'].unique():
+        segment_data = customer_data[customer_data['Segment'] == segment]
+        print(f"   {segment}: {len(segment_data)} customers, Avg LTV: ${segment_data['LTV'].mean():,.2f}")
+    
+    return customer_data
+
+# Run the dashboard creation
+dashboard_data = create_data_dashboard()
+
+# -------------------- CLIENT PROJECT 8: TIME SERIES VISUALIZATION --------------------
+print("\n" + "="*50)
+print("CLIENT PROJECT 8: Time Series Analysis and Visualization")
+print("="*50)
+
+def time_series_visualization():
+    """
+    Create time series visualizations to show trends and patterns over time.
+    """
+    print("\nTIME SERIES ANALYSIS")
+    print("="*40)
+    
+    # Generate time series data
+    np.random.seed(42)
+    dates = pd.date_range(start='2023-01-01', end='2024-12-31', freq='D')
+    n_days = len(dates)
+    
+    # Create trend, seasonal, and random components
+    trend = np.linspace(100, 200, n_days)
+    seasonal = 20 * np.sin(2 * np.pi * np.arange(n_days) / 365)  # Yearly seasonality
+    weekly = 10 * np.sin(2 * np.pi * np.arange(n_days) / 7)      # Weekly pattern
+    noise = np.random.normal(0, 5, n_days)
+    
+    # Combine components
+    sales = trend + seasonal + weekly + noise
+    sales = np.maximum(sales, 0)  # Ensure non-negative
+    
+    # Create DataFrame
+    time_df = pd.DataFrame({
+        'Date': dates,
+        'Sales': sales,
+        'Month': dates.month,
+        'Year': dates.year,
+        'DayOfWeek': dates.dayofweek,
+        'Quarter': dates.quarter
+    })
+    
+    # Add categorical columns
+    time_df['Month_Name'] = time_df['Date'].dt.month_name()
+    time_df['Day_Name'] = time_df['Date'].dt.day_name()
+    time_df['Is_Weekend'] = time_df['DayOfWeek'].isin([5, 6])
+    
+    print(f"\nTime Series Data Created:")
+    print(f"Date Range: {time_df['Date'].min()} to {time_df['Date'].max()}")
+    print(f"Total Days: {len(time_df)}")
+    print(f"\nFirst 5 records:")
+    print(time_df.head())
+    
+    # Create time series visualizations
+    fig = plt.figure(figsize=(16, 12))
+    
+    # 1. Main Time Series Plot
+    ax1 = plt.subplot(3, 2, 1)
+    ax1.plot(time_df['Date'], time_df['Sales'], linewidth=1, color='blue', alpha=0.7)
+    ax1.set_title('Daily Sales - Full Time Series', fontsize=12, fontweight='bold')
+    ax1.set_xlabel('Date')
+    ax1.set_ylabel('Sales ($)')
+    ax1.grid(True, alpha=0.3)
+    
+    # 2. Monthly Aggregation
+    ax2 = plt.subplot(3, 2, 2)
+    monthly_sales = time_df.groupby(['Year', 'Month'])['Sales'].mean().reset_index()
+    monthly_sales['Year_Month'] = monthly_sales['Year'].astype(str) + '-' + monthly_sales['Month'].astype(str).str.zfill(2)
+    ax2.plot(monthly_sales['Year_Month'], monthly_sales['Sales'], marker='o', linewidth=2, markersize=4)
+    ax2.set_title('Monthly Average Sales', fontsize=12, fontweight='bold')
+    ax2.set_xlabel('Year-Month')
+    ax2.set_ylabel('Average Sales ($)')
+    ax2.tick_params(axis='x', rotation=45)
+    
+    # 3. Day of Week Pattern
+    ax3 = plt.subplot(3, 2, 3)
+    dow_sales = time_df.groupby('Day_Name')['Sales'].mean().reindex(
+        ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
+    ax3.bar(dow_sales.index, dow_sales.values, color='skyblue', edgecolor='navy')
+    ax3.set_title('Average Sales by Day of Week', fontsize=12, fontweight='bold')
+    ax3.set_xlabel('Day')
+    ax3.set_ylabel('Average Sales ($)')
+    ax3.tick_params(axis='x', rotation=45)
+    
+    # 4. Monthly Box Plot
+    ax4 = plt.subplot(3, 2, 4)
+    time_df['Month_Short'] = time_df['Date'].dt.month_name().str[:3]
+    month_order = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    sns.boxplot(data=time_df, x='Month_Short', y='Sales', order=month_order, ax=ax4)
+    ax4.set_title('Sales Distribution by Month', fontsize=12, fontweight='bold')
+    ax4.set_xlabel('Month')
+    ax4.set_ylabel('Sales ($)')
+    ax4.tick_params(axis='x', rotation=45)
+    
+    # 5. Rolling Average
+    ax5 = plt.subplot(3, 2, 5)
+    time_df['Rolling_7day'] = time_df['Sales'].rolling(window=7).mean()
+    time_df['Rolling_30day'] = time_df['Sales'].rolling(window=30).mean()
+    
+    ax5.plot(time_df['Date'], time_df['Sales'], alpha=0.3, linewidth=0.5, label='Daily')
+    ax5.plot(time_df['Date'], time_df['Rolling_7day'], linewidth=2, label='7-day MA')
+    ax5.plot(time_df['Date'], time_df['Rolling_30day'], linewidth=2, label='30-day MA')
+    ax5.set_title('Sales with Moving Averages', fontsize=12, fontweight='bold')
+    ax5.set_xlabel('Date')
+    ax5.set_ylabel('Sales ($)')
+    ax5.legend()
+    ax5.grid(True, alpha=0.3)
+    
+    # 6. Weekend vs Weekday
+    ax6 = plt.subplot(3, 2, 6)
+    weekend_data = [time_df[time_df['Is_Weekend'] == False]['Sales'],
+                    time_df[time_df['Is_Weekend'] == True]['Sales']]
+    ax6.boxplot(weekend_data, labels=['Weekday', 'Weekend'])
+    ax6.set_title('Weekday vs Weekend Sales', fontsize=12, fontweight='bold')
+    ax6.set_xlabel('Day Type')
+    ax6.set_ylabel('Sales ($)')
+    ax6.grid(True, alpha=0.3)
+    
+    plt.suptitle('TIME SERIES ANALYSIS DASHBOARD', fontsize=14, fontweight='bold')
+    plt.tight_layout()
+    plt.show()
+    
+    # Additional standalone visualizations
+    
+    # 7. Seasonal Decomposition
+    from statsmodels.tsa.seasonal import seasonal_decompose
+    
+    # Resample to monthly for decomposition
+    monthly_series = time_df.set_index('Date')['Sales'].resample('M').mean()
+    
+    # Simple decomposition by plotting components separately
+    fig2, axes = plt.subplots(4, 1, figsize=(14, 10))
+    
+    # Original
+    axes[0].plot(monthly_series.index, monthly_series.values)
+    axes[0].set_title('Original Monthly Sales')
+    axes[0].set_ylabel('Sales')
+    
+    # Trend (simple moving average)
+    trend = monthly_series.rolling(window=3, center=True).mean()
+    axes[1].plot(trend.index, trend.values, color='orange')
+    axes[1].set_title('Trend Component')
+    axes[1].set_ylabel('Sales')
+    
+    # Seasonal (detrended)
+    detrended = monthly_series - trend
+    axes[2].plot(detrended.index, detrended.values, color='green')
+    axes[2].set_title('Seasonal + Residual')
+    axes[2].set_ylabel('Sales')
+    
+    # Residual
+    seasonal_pattern = detrended.groupby(detrended.index.month).mean()
+    residuals = detrended - [seasonal_pattern[i] for i in detrended.index.month]
+    axes[3].plot(residuals.index, residuals.values, color='red')
+    axes[3].set_title('Residual Component')
+    axes[3].set_ylabel('Sales')
+    axes[3].set_xlabel('Date')
+    
+    plt.suptitle('TIME SERIES DECOMPOSITION', fontsize=14, fontweight='bold')
+    plt.tight_layout()
+    plt.show()
+    
+    # 8. Heatmap of sales by month and day
+    fig3, ax = plt.subplots(figsize=(12, 8))
+    
+    # Pivot table for heatmap
+    time_df['Day'] = time_df['Date'].dt.day
+    heatmap_data = time_df.pivot_table(values='Sales', index='Month', columns='Day', aggfunc='mean')
+    
+    sns.heatmap(heatmap_data, cmap='YlOrRd', ax=ax, cbar_kws={'label': 'Average Sales'})
+    ax.set_title('Sales Heatmap: Month vs Day', fontsize=14, fontweight='bold')
+    ax.set_xlabel('Day of Month')
+    ax.set_ylabel('Month')
+    
+    plt.show()
+    
+    # Summary statistics
+    print("\n" + "="*40)
+    print("TIME SERIES SUMMARY STATISTICS")
+    print("="*40)
+    
+    print(f"\nOverall Statistics:")
+    print(f"   Mean Daily Sales: ${time_df['Sales'].mean():,.2f}")
+    print(f"   Median Daily Sales: ${time_df['Sales'].median():,.2f}")
+    print(f"   Std Deviation: ${time_df['Sales'].std():,.2f}")
+    print(f"   Min Sales: ${time_df['Sales'].min():,.2f}")
+    print(f"   Max Sales: ${time_df['Sales'].max():,.2f}")
+    
+    print(f"\nBest Performing Day: {time_df.loc[time_df['Sales'].idxmax(), 'Date'].strftime('%Y-%m-%d')} "
+          f"(${time_df['Sales'].max():,.2f})")
+    print(f"Worst Performing Day: {time_df.loc[time_df['Sales'].idxmin(), 'Date'].strftime('%Y-%m-%d')} "
+          f"(${time_df['Sales'].min():,.2f})")
+    
+    print(f"\nAverage by Day Type:")
+    print(f"   Weekday: ${time_df[~time_df['Is_Weekend']]['Sales'].mean():,.2f}")
+    print(f"   Weekend: ${time_df[time_df['Is_Weekend']]['Sales'].mean():,.2f}")
+    
+    print(f"\nTop 3 Months by Average Sales:")
+    top_months = time_df.groupby('Month_Name')['Sales'].mean().sort_values(ascending=False).head(3)
+    for month, sales in top_months.items():
+        print(f"   {month}: ${sales:,.2f}")
+    
+    return time_df
+
+# Run time series visualization
+ts_data = time_series_visualization()
+
+print("\n" + "="*50)
+print("WEEK 4 COMPLETED: Data Visualization Mastered!")
+print("="*50)
